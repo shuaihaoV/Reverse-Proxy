@@ -12,23 +12,23 @@ struct ProxyArgs {
         long,
         short = 'L',
         default_value = "8000",
-        help = "本地监听端口,默认8000"
+        help = "Local Listen Port"
     )]
     lport: u16,
 
-    #[arg(long, short = 'I', help = "目标IP地址")]
+    #[arg(long, short = 'I', help = "Remote IP")]
     ip: String,
 
-    #[arg(long, short = 'P', help = "目标端口", default_value = "6677")]
+    #[arg(long, short = 'P', help = "Remote Port", default_value = "6677")]
     port: u16,
 
-    #[arg(long, short = 'H', help = "请求头Host")]
+    #[arg(long, short = 'H', help = "New Host (Relace Request Header)")]
     host: String,
 
     #[arg(
         long,
         short = 'X',
-        help = "请求头X-Forwarded-For",
+        help = "Request Header X-Forwarded-For",
         default_value = "127.0.0.1"
     )]
     x_forwarded_for: String,
